@@ -19,7 +19,7 @@ file_2 <- cv[[2]] # Test data in SingleCellExperiment format
 
 ```
 
-The next step is to export the data to an RDS file, which can be uploaded to [CITEViz]((https://github.com/maxsonBraunLab/CITEViz) via the upload button in the GUI.
+The next step is to export the data to an RDS file, which can be uploaded to [CITEViz](https://github.com/maxsonBraunLab/CITEViz) via the upload button in the GUI.
 
 ```R
 # export information to external file
