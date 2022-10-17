@@ -19,7 +19,7 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-```{r setup, include=FALSE, eval = FALSE}
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
 BiocStyle::markdown()
@@ -37,50 +37,40 @@ In this tutorial, we use a peripheral blood mononuclear cells (PBMC) CITE-Seq da
 
 # Download CITEViz Test Data from ExperimentHub
 
-The following code chunk shows how to access the PBMC CITE-Seq dataset through ExperimentHub. The test data are identical but formatted in either a Seurat object or a SingleCellExperiment. When either of these datasets are downloaded, it is exported as an RDS for input to CITEViz via the "upload" button in the GUI. There are multiple ways to download from ExperimentHub, such as the following:
+The following code chunk shows how to access the PBMC CITE-Seq dataset through ExperimentHub. The test data are identical but formatted in either a Seurat object or a SingleCellExperiment. When either of these datasets are downloaded, it is exported as an RDS for input to CITEViz via the "upload" button in the GUI. The following example shows how to download the datasets:
 
-```{r eval = FALSE}
+```{r eval=FALSE}
 library(ExperimentHub)
 
 # create EH instance and query it
 eh <- ExperimentHub()
-cv <- query(eh, "CITEVizTestData")
+query_results <- query(eh, "CITEVizTestData")
 
 # get PBMC CITE-Seq datasets in two formats
-file_1 <- cv[[1]] # Test data in Seurat format
-file_2 <- cv[[2]] # Test data in SingleCellExperiment format
-```
-
-```{r eval = FALSE}
-library(ExperimentHub)
-
-# create EH instance and query it
-eh <- ExperimentHub()
-cv <- query(eh, "CITEVizTestData")
-
-# another way to load the test data
-file_1 <- CITEVizTestData(format = "Seurat")
-file_2 <- CITEVizTestData(format = "SingleCellExperiment")
-```
-
-```{r eval = FALSE}
-library(ExperimentHub)
-
-# create EH instance and query it
-eh <- ExperimentHub()
-cv <- query(eh, "CITEVizTestData")
-
-# use the following to import by EH ID
-# file_1 <- CITEVizTestData(format = "Seurat")
-# file_2 <- CITEVizTestData(format = "SingleCellExperiment")
+file_seurat <- query_results[["EH7739"]] # Test data in Seurat format
+file_sce <- query_results[["EH7740"]] # Test data in SingleCellExperiment format
 
 # export information to external file
-saveRDS(file_1, "CITEVizTestData_Seurat.rds")
-saveRDS(file_2, "CITEVizTestData_SingleCellExperiment.rds")
+saveRDS(file_seurat, "CITEVizTestData_Seurat.rds")
+saveRDS(file_sce, "CITEVizTestData_SingleCellExperiment.rds")
 
 ```
 
-After exporting both datasets, they are downloaded your local working directory. Both files can be the input to CITEViz. To understand how to use CITEViz, please click the link [here](https://github.com/maxsonBraunLab/CITEViz).
+An alternative method to download the data can be done with 'function calls' like below:
+
+```{r eval=FALSE}
+library(ExperimentHub)
+library(CITEVizTestData)
+
+file_seurat = CITEVizTestData(format = "Seurat")
+file_sce = CITEVizTestData(format = "SingleCellExperiment")
+
+saveRDS(file_seurat, "CITEVizTestData_Seurat.rds")
+saveRDS(file_sce, "CITEVizTestData_SingleCellExperiment.rds")
+
+```
+
+After exporting both datasets using either methods, they should be located in your local working directory. To understand how to use CITEViz, please click the link [here](https://github.com/maxsonBraunLab/CITEViz).
 
 # References
 

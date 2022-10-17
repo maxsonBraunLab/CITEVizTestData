@@ -8,8 +8,9 @@
 #' @param format Either "Seurat" or "SingleCellExperiment"
 #' @return A Seurat [default] or SingleCellExperiment object.
 #' @examples \donttest{
-#' file_1 = CITEVizTestData(format = "Seurat")
-#' file_2 = CITEVizTestData(format = "SingleCellExperiment")
+#' library(CITEVizTestData)
+#' file_seurat = CITEVizTestData(format = "Seurat")
+#' file_sce = CITEVizTestData(format = "SingleCellExperiment")
 #' }
 #' 
 #' @importFrom ExperimentHub ExperimentHub
@@ -31,11 +32,11 @@ CITEVizTestData <- function(format = "Seurat") {
     if (format == "Seurat") {
       # I know I am not supposed to use the index, 
       # but I currently don't have an EHID right now.
-      out <- q[[1]]
+      out <- q[["EH7739"]]
     }
     
     if (format == "SingleCellExperiment")
-      out <- q[[2]]
+      out <- q[["EH7740"]]
   
   return(out)
     

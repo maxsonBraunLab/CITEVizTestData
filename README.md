@@ -11,11 +11,11 @@ library(ExperimentHub)
 
 # create EH instance and query it
 eh <- ExperimentHub()
-cv <- query(eh, "CITEVizTestData")
+query_results <- query(eh, "CITEVizTestData")
 
 # get PBMC CITE-Seq datasets in two formats
-file_1 <- cv[[1]] # Test data in Seurat format
-file_2 <- cv[[2]] # Test data in SingleCellExperiment format
+file_seurat <- query_results[["EH7739"]] # Test data in Seurat format
+file_sce <- query_results[["EH7740"]] # Test data in SingleCellExperiment format
 
 ```
 
@@ -23,7 +23,7 @@ The next step is to export the data to an RDS file, which can be uploaded to [CI
 
 ```R
 # export information to external file
-saveRDS(file_1, "CITEVizTestData_Seurat.rds")
-saveRDS(file_2, "CITEVizTestData_SingleCellExperiment.rds")
+saveRDS(file_seurat, "CITEVizTestData_Seurat.rds")
+saveRDS(file_sce, "CITEVizTestData_SingleCellExperiment.rds")
 
 ```

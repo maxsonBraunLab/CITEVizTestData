@@ -1,6 +1,6 @@
 Package: CITEVizTestData
 Title: Peripheral blood CITE-Seq dataset with 10K cells for use with CITEViz tutorial
-Version: 0.99.0
+Version: 0.99.1
 Date: 2022-10-11
 Authors@R: c(
     person('Garth', 'Kong', email = 'kongga2017@gmail.com', role = c('cre', 'aut'), comment = c(ORCID = '0000-0001-5262-5406')),
@@ -18,6 +18,7 @@ License: MIT + file LICENSE
 Imports:
   AnnotationHub,
   ExperimentHub
+Encoding: UTF-8
 RoxygenNote: 7.2.1
 Suggests:
   knitr,

@@ -1,5 +1,3 @@
-## validate with `AnnotationHubData::readMetadataFromCsv("PBMC-CITE-Seq-ExperimentHub")`
-
 url = "https://atlas.fredhutch.org/data/nygc/multimodal/pbmc_multimodal.h5seurat"
 md5sum = "82421ea2c16fe30fba15559efbcf9094"
 species = "Homo sapiens"
@@ -20,7 +18,7 @@ d <- data.frame(
 	RDataClass = c("Seurat", "SingleCellExperiment"),
 	DispatchClass = rep("Rds", 2),
 	stringsAsFactors = FALSE,
-	RDataPath = c("CITEVizTestData/inst/extdata/pbmc_2500.rds", "CITEVizTestData/inst/extdata/pbmc_2500_sce.rds")
+	RDataPath = c("CITEVizTestData/pbmc_2500.rds", "CITEVizTestData/pbmc_2500_sce.rds")
 )
 
 write.csv(d, "inst/extdata/metadata.csv", row.names = FALSE)
