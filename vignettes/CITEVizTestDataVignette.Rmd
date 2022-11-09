@@ -21,7 +21,6 @@ vignette: >
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-
 BiocStyle::markdown()
 ```
 
@@ -39,7 +38,7 @@ In this tutorial, we use a peripheral blood mononuclear cells (PBMC) CITE-Seq da
 
 The following code chunk shows how to access the PBMC CITE-Seq dataset through ExperimentHub. The test data are identical but formatted in either a Seurat object or a SingleCellExperiment. When either of these datasets are downloaded, it is exported as an RDS for input to CITEViz via the "upload" button in the GUI. The following example shows how to download the datasets:
 
-```{r eval=FALSE}
+```{r}
 library(ExperimentHub)
 
 # create EH instance and query it
@@ -58,12 +57,12 @@ saveRDS(file_sce, "CITEVizTestData_SingleCellExperiment.rds")
 
 An alternative method to download the data can be done with 'function calls' like below:
 
-```{r eval=FALSE}
+```{r}
 library(ExperimentHub)
 library(CITEVizTestData)
 
-file_seurat = CITEVizTestData(format = "Seurat")
-file_sce = CITEVizTestData(format = "SingleCellExperiment")
+file_seurat <- CITEVizTestData(format = "Seurat")
+file_sce <- CITEVizTestData(format = "SingleCellExperiment")
 
 saveRDS(file_seurat, "CITEVizTestData_Seurat.rds")
 saveRDS(file_sce, "CITEVizTestData_SingleCellExperiment.rds")

@@ -7,11 +7,11 @@
 #'
 #' @param format Either "Seurat" or "SingleCellExperiment"
 #' @return A Seurat [default] or SingleCellExperiment object.
-#' @examples \donttest{
+#' @examples
 #' library(CITEVizTestData)
-#' file_seurat = CITEVizTestData(format = "Seurat")
-#' file_sce = CITEVizTestData(format = "SingleCellExperiment")
-#' }
+#' file_seurat <- CITEVizTestData(format = "Seurat")
+#' file_sce <- CITEVizTestData(format = "SingleCellExperiment")
+#'
 #' 
 #' @importFrom ExperimentHub ExperimentHub
 #' @importFrom AnnotationHub query
@@ -25,7 +25,7 @@ CITEVizTestData <- function(format = "Seurat") {
   
   if (format %in% all_formats) {
   
-    eh = ExperimentHub::ExperimentHub()
+    eh <- ExperimentHub::ExperimentHub()
     pkgname <- "CITEVizTestData"
     q <- AnnotationHub::query(eh, pkgname)
     
