@@ -5,7 +5,7 @@ species = "Homo sapiens"
 d <- data.frame(
 	Title = c("CITEVizTestDataSeurat", "CITEVizTestDataSCE"),
 	Description = c("PBMC CITE-Seq data in Seurat format with 2500 cells", "PBMC CITE-Seq data in SingleCellExperiment format with 2500 cells"),
-	BiocVersion = rep("3.16", 2),
+	BiocVersion = rep("3.17", 2),
 	Genome = rep("GRCh38", 2),
 	SourceType = rep("HDF5", 2),
 	SourceUrl = rep(url, 2),
