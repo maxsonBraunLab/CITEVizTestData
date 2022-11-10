@@ -53,7 +53,6 @@ file_sce <- query_results[["EH7740"]] # Test data in SingleCellExperiment format
 # export information to external file
 saveRDS(file_seurat, "CITEVizTestData_Seurat.rds")
 saveRDS(file_sce, "CITEVizTestData_SingleCellExperiment.rds")
-
 ```
 
 An alternative method to download the data can be done with 'function calls' like below:
@@ -68,7 +67,6 @@ file_sce <- CITEVizTestData(format = "SingleCellExperiment")
 
 saveRDS(file_seurat, "CITEVizTestData_Seurat.rds")
 saveRDS(file_sce, "CITEVizTestData_SingleCellExperiment.rds")
-
 ```
 
 After exporting both datasets using either methods, they should be located in your local working directory. To understand how to use CITEViz, please click the link [here](https://github.com/maxsonBraunLab/CITEViz).
