@@ -9,9 +9,10 @@
 #' @return A Seurat [default] or SingleCellExperiment object.
 #' @examples
 #' library(CITEVizTestData)
+#' library(Seurat)
 #' file_seurat <- CITEVizTestData(format = "Seurat")
 #' file_sce <- CITEVizTestData(format = "SingleCellExperiment")
-#'
+#' 
 #' 
 #' @importFrom ExperimentHub ExperimentHub
 #' @importFrom AnnotationHub query
@@ -30,13 +31,12 @@ CITEVizTestData <- function(format = "Seurat") {
     q <- AnnotationHub::query(eh, pkgname)
     
     if (format == "Seurat") {
-      # I know I am not supposed to use the index, 
-      # but I currently don't have an EHID right now.
       out <- q[["EH7739"]]
     }
-    
-    if (format == "SingleCellExperiment")
+
+    if (format == "SingleCellExperiment") {
       out <- q[["EH7740"]]
+    }
   
   return(out)
     

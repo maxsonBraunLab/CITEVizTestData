@@ -40,6 +40,7 @@ The following code chunk shows how to access the PBMC CITE-Seq dataset through E
 
 ```{r}
 library(ExperimentHub)
+library(Seurat)
 
 # create EH instance and query it
 eh <- ExperimentHub()
@@ -60,6 +61,7 @@ An alternative method to download the data can be done with 'function calls' lik
 ```{r}
 library(ExperimentHub)
 library(CITEVizTestData)
+library(Seurat)
 
 file_seurat <- CITEVizTestData(format = "Seurat")
 file_sce <- CITEVizTestData(format = "SingleCellExperiment")
