@@ -23,8 +23,8 @@ sampled_barcodes = sample(barcodes, 2500)
 small_pbmc = subset(pbmc, cells = sampled_barcodes)
 
 # export as Seurat object
-saveRDS(small_pbmc, "pbmc_2500.rds")
+saveRDS(small_pbmc, "pbmc-cite-seq-2500-seurat.rds")
 
 # export as SCE object
 small_pbmc_sce = as.SingleCellExperiment(pbmc)
-saveRDS(small_pbmc, "pbmc_2500_sce.rds")
+saveRDS(small_pbmc, "pbmc-cite-seq-2500-sce.rds")

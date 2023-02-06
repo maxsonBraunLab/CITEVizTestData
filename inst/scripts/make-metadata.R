@@ -18,7 +18,7 @@ d <- data.frame(
 	RDataClass = c("Seurat", "SingleCellExperiment"),
 	DispatchClass = rep("Rds", 2),
 	stringsAsFactors = FALSE,
-	RDataPath = c("CITEVizTestData/pbmc_2500.rds", "CITEVizTestData/pbmc_2500_sce.rds")
+	RDataPath = c("CITEVizTestData/pbmc-cite-seq-2500-seurat.rds", "CITEVizTestData/pbmc-cite-seq-2500-sce.rds")
 )
 
 write.csv(d, "inst/extdata/metadata.csv", row.names = FALSE)

@@ -23,7 +23,7 @@ The next step is to export the data to an RDS file, which can be uploaded to [CI
 
 ```R
 # export information to external file
-saveRDS(file_seurat, "CITEVizTestData_Seurat.rds")
-saveRDS(file_sce, "CITEVizTestData_SingleCellExperiment.rds")
+saveRDS(file_seurat, "pbmc-cite-seq-2500-seurat.rds")
+saveRDS(file_sce, "pbmc-cite-seq-2500-sce.rds")
 
 ```
